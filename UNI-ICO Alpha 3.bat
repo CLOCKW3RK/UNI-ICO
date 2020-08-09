@@ -40,5 +40,5 @@ if '%choice%'=='3' goto exit
 if '%choice%'=='nul' goto null
 
 :retroarch
-cd C:\Users\%USERNAME%\Desktop\TEST
+cd C:\Users\%USERNAME%\Desktop\UNI-ICO
 start rarch.vbs
