@@ -1,3 +1,2 @@
 ﻿# UNI-ICO
-???¿¿¿？？？
-Dis Placeholder Shit, No Push no repo ayy lmao
+A universal icon maker for Windows 10. Still in Alpha.
