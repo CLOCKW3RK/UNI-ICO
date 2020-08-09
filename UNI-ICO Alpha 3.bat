@@ -40,4 +40,5 @@ if '%choice%'=='3' goto exit
 if '%choice%'=='nul' goto null
 
 :retroarch
-start rarch.bat
+cd C:\Users\%USERNAME%\Desktop\TEST
+start rarch.vbs
