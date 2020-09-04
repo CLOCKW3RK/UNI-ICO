@@ -56,39 +56,50 @@ if '%choice%'=='8' goto yuzu
 if '%choice%'=='nul' goto null
 
 :retroarch
-cd C:\Users\%USERNAME%\Desktop\UNI-ICO\EmuBases\retro
+cd %CD%\EmuBases\retro
 start retro.vbs
+goto exit
 
 :cemu
-cd C:\Users\%USERNAME%\Desktop\UNI-ICO\EmuBases\cemu
+cd %CD%\EmuBases\cemu
 start cemu.vbs
+goto exit
 
 :citra
-cd C:\Users\%USERNAME%\Desktop\UNI-ICO\EmuBases\citra
+cd %CD%\EmuBases\citra
 start citra.vbs
+goto exit
 
 :pcsx2
-cd C:\Users\%USERNAME%\Desktop\UNI-ICO\EmuBases\pcsx2
+cd %CD%\EmuBases\pcsx2
 start pcsx2.vbs
+goto exit
 
 :pj64
-cd C:\Users\%USERNAME%\Desktop\UNI-ICO\EmuBases\pj64
+cd %CD%\EmuBases\pj64
 start pj64.vbs
+goto exit
 
 :rpcs3
-cd C:\Users\%USERNAME%\Desktop\UNI-ICO\EmuBases\rpcs3
+cd %CD%\EmuBases\rpcs3
 start rpcs3.vbs
+goto exit
 
 :tekno
-cd C:\Users\%USERNAME%\Desktop\UNI-ICO\EmuBases\tekno
+cd %CD%\EmuBases\tekno
 start tekno.vbs
+goto exit
 
 :yuzu
-cd C:\Users\%USERNAME%\Desktop\UNI-ICO\EmuBases\yuzu
+cd %CD%\EmuBases\yuzu
 start yuzu.vbs
+goto exit
 
 :null
 echo Please retry choice!
 pause
 cls
 goto intro 
+
+:exit
+exit

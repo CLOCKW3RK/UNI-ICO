@@ -74,7 +74,33 @@ goto Name
 set /p Name=Enter the name of the batch file... 
 set /p pcsx2Dir=Enter where Pcsx2 is installed... 
 set /p GameDir=Enter your game directory, i.e., the FOLDER the game is in... 
-set /p GameName=Enter the FULL FILENAME of your ISO/BIN file... 
+set /p GameName=Enter the FULL FILENAME of your ISO/BIN file...
+echo Do you want to use the full PS2 Bootscreen?
+CHOICE /C 12 /T 5 /D 1 /M "Will select fullboot mode automatically in 5 sec (YES=1/NO=2)"
+IF %ERRORLEVEL%==1 GOTO fullbootyes
+IF %ERRORLEVEL%==2 GOTO fullbootno
+
+
+:fullbootyes
+mkdir "%pcsx2Dir%\$Scripts"
+mkdir "%pcsx2Dir%\$Scripts\%Name%"
+echo Making BAT...
+(
+  echo @echo off
+  echo start /b killcmd
+  echo cd "%pcsx2Dir%"
+  echo pcsx2 "%GameDir%\%GameName%" --fullboot
+) > "%pcsx2Dir%\$Scripts\%Name%\%Name%.bat"
+
+(
+  echo @echo off
+  echo timeout /t 3
+  echo taskkill /f /im cmd.exe
+) > "%pcsx2Dir%\$Scripts\%Name%\killcmd.bat"
+echo Done!
+goto nocmd
+
+:fullbootno
 mkdir "%pcsx2Dir%\$Scripts"
 mkdir "%pcsx2Dir%\$Scripts\%Name%"
 echo Making BAT...
