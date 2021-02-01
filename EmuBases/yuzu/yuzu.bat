@@ -101,11 +101,12 @@ IF %ERRORLEVEL%==2 GOTO n
 
 :y
 echo Making VBS...
-echo Set oShell = CreateObject ("Wscript.Shell") >> %Name%.vbs
-echo Dim strArgs >> %Name%.vbs
-echo strArgs = "cmd /c %Name%.bat" >> %Name%.vbs
-echo oShell.Run strArgs, 0, false >> %Name%.vbs
-move %Name%.vbs "%YuzuDir%\$Scripts\%Name%"
+(
+  echo Set oShell ^= CreateObject ^("Wscript.Shell"^)
+  echo Dim strArgs
+  echo strArgs ^= "cmd /c %Name%.bat"
+  echo oShell.Run strArgs^, 0^, false
+) > "%YuzuDir%\$Scripts\%Name%\%Name%.vbs" 
 echo Done!
 cls
 goto Icon
