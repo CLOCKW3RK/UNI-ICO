@@ -18,7 +18,7 @@ ECHO !!! WELCOME TO !!!
 ::: :  ,      .-./;   |.'      '---'                             '---'    \   \ .'      `---`      
 :::  `--`----'    '---'                                                    `---`                   
 
-ECHO CLOSED ALPHA 2.8320
+ECHO Still in alpha!
 
 for /f "delims=: tokens=*" %%A in ('findstr /b ::: "%~f0"') do @echo(%%A
 
